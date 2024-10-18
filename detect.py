@@ -1,4 +1,4 @@
-# 导入必要的库
+# 导入必要的库咩咩
 from ultralytics import YOLO  # 导入 YOLO 模型
 import torch
 import cv2  # 导入 OpenCV 库

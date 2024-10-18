@@ -6,8 +6,6 @@ import numpy as np
 import mss  # 导入 mss 库用于屏幕截图
 import time
 
-a = 0
-
 # 指定设备
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f'使用的设备：{device}')  # 打印使用的设备
