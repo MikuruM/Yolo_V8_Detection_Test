@@ -1,10 +1,12 @@
-# 导入必要的库
+# 导入必要的库咩咩
 from ultralytics import YOLO  # 导入 YOLO 模型
 import torch
 import cv2  # 导入 OpenCV 库
 import numpy as np
 import mss  # 导入 mss 库用于屏幕截图
 import time
+
+a = 0
 
 # 指定设备
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
