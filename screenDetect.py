@@ -11,13 +11,14 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f'使用的设备：{device}')  # 打印使用的设备
 
 # 加载预训练的 YOLOv8 模型并移动到指定设备
-model = YOLO('yolov8s.pt').to(device)  # 加载 YOLOv8 nano 模型
+#model = YOLO('yolov8x.pt').to(device)  # 加载 YOLOv8 nano 模型
+model = YOLO(r'D:\PyCharm\Detect\runs\detect\train7\weights\best.pt')
 
 # 设置置信度阈值
 model.conf = 0.5  # 只保留置信度大于 0.5 的检测结果
 
-# 设置要检测的类别（可选）
-# model.classes = list(range(0, 80))  # 检测所有类别
+#设置要检测的类别（可选）
+#model.classes = list(range(0, 80))  # 检测所有类别
 
 # 初始化 mss
 sct = mss.mss()
@@ -64,6 +65,7 @@ while True:
     img = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)  # 转换颜色格式（去除透明度通道）
 
     # 对截图进行物体检测，指定设备
+    #results = model(img, device=device, classes = [0]) # classes设置检测类别
     results = model(img, device=device)
 
     # 获取检测结果
